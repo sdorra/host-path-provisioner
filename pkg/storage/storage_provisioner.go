@@ -39,6 +39,8 @@ func (p *HostPathProvisioner) Provision(options controller.VolumeOptions) (*v1.P
 		return nil, err
 	}
 
+	hostPathType := v1.HostPathDirectoryOrCreate
+
 	pv := &v1.PersistentVolume{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: options.PVName,
@@ -52,6 +54,7 @@ func (p *HostPathProvisioner) Provision(options controller.VolumeOptions) (*v1.P
 			PersistentVolumeSource: v1.PersistentVolumeSource{
 				HostPath: &v1.HostPathVolumeSource{
 					Path: volumePath,
+					Type: &hostPathType,
 				},
 			},
 		},
