@@ -39,6 +39,8 @@ func (p *HostPathProvisioner) Provision(options controller.VolumeOptions) (*v1.P
 		return nil, err
 	}
 
+	// fix subpath container creation
+  // https://github.com/kubernetes/kubernetes/issues/66583
 	hostPathType := v1.HostPathDirectoryOrCreate
 
 	pv := &v1.PersistentVolume{
