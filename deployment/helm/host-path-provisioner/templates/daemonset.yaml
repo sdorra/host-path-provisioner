@@ -27,6 +27,9 @@ spec:
           args: ["-directory", "{{.Values.directory}}"]
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /var/lib/kubelet/host-path-provisioner-volumes
+              name: host-path-provisioner-volume
       volumes:
         - name: host-path-provisioner-volume
           hostPath:
