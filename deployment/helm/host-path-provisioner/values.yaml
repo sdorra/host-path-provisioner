@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: sdorra/host-path-provisioner
-  tag: 0.0.3
+  tag: 0.0.4
   pullPolicy: IfNotPresent
 
 directory: /var/lib/kubelet/host-path-provisioner-volumes

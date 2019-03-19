@@ -88,7 +88,7 @@ spec:
       serviceAccountName: host-path-provisioner
       containers:
         - name: host-path-provisioner
-          image: sdorra/host-path-provisioner:0.0.3
+          image: sdorra/host-path-provisioner:0.0.4
           command: ["/bin/host-path-provisioner"]
           args: ["-directory", "/var/lib/kubelet/host-path-provisioner-volumes"]
           imagePullPolicy: "Always"
